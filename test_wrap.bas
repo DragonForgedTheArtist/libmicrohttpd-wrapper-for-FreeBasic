@@ -54,7 +54,6 @@ Function MyHandler Cdecl( _
                 Return -1
             End If
 
-'            CopyMemory(outp_, StrPtr(resp), Len(resp))
             Return Len(resp)
         End If
     Elseif *method = "POST" Then
@@ -90,10 +89,6 @@ End If
 Print "Server: http://127.0.0.1:" & PORT & "/health"
 Print ""
 
-'Dim js As String = "{""kind"":""ingest"",""payload"":{""file"":""rules.pdf""}}"
-'mhd_push(StrPtr(js))
-
 Sleep
 
 mhd_stop()
-'DyLibFree(h)
