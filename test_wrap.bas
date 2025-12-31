@@ -3,11 +3,13 @@
 
 #inclib "mhd_wrap"
 
+Extern "C"
 declare function mhd_start cdecl alias "mhd_start" (ByVal port_ As UShort) As Long
 declare sub mhd_stop cdecl alias "mhd_stop" ()
 declare sub mhd_reply_text cdecl alias "mhd_reply_text" (ByVal c As Any Ptr, code as Long, mime_type As ZString Ptr, buff as ZString ptr)
 declare sub mhd_reply_bytes cdecl alias "mhd_reply_bytes" (ByVal c As Any Ptr, code as Long, mime_type As ZString Ptr, buff as ZString ptr, length As Long)
 declare sub seth cdecl alias "mhd_set_handler" (ByVal fn As Any Ptr)
+End Extern
 
 Function MyHandler Cdecl( _
     ByVal connection As Any ptr, _
