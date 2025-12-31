@@ -3,16 +3,6 @@
 
 #inclib "mhd_wrap"
 
-Type FB_HANDLER As Function Cdecl( _
-    ByVal connection As Any ptr, _
-    ByVal url As ZString Ptr, _
-    ByVal headers As ZString ptr, _
-    ByVal query As ZString ptr, _
-    ByVal method As ZString Ptr, _
-    ByVal req As UByte Ptr, ByVal req_len As Long, _
-    ByVal outp_ As UByte Ptr, ByVal out_cap As Long _
-) As Long
-
 declare function mhd_start cdecl alias "mhd_start" (ByVal port_ As UShort) As Long
 declare sub mhd_stop cdecl alias "mhd_stop" ()
 declare sub mhd_reply_text cdecl alias "mhd_reply_text" (ByVal c As Any Ptr, code as Long, mime_type As ZString Ptr, buff as ZString ptr)
